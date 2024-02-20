@@ -13,7 +13,7 @@ export default {
         },
       },
       animation: {
-        "main-enter": "main-enter 1.5s ease-in",
+        "main-enter": "main-enter 1.5s steps(5, end)",
       },
     },
   },
