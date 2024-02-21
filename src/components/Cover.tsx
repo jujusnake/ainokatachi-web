@@ -14,24 +14,16 @@ const Cover = ({ show, onClose }: Props) => {
 
   return (
     <div
-      className={`${
-        show ? "flex" : "hidden"
-      } h-dvh justify-center items-center flex-col gap-8 ${
+      className={`${show ? "flex" : "hidden"} h-dvh justify-center items-center flex-col gap-8 ${
         hide ? "opacity-0" : "opacity-100"
       } transition-opacity duration-[1.2s] ease-[steps(6,_end)]`}
       onTransitionEnd={onClose}
     >
-      <div className="animate-main-enter text-white flex flex-col gap-2 items-center">
-        <div
-          className="glitch font-dotgothic text-sm select-none"
-          title="ainokatachi"
-        >
-          ainokatachi
+      <div className="flex flex-col items-center gap-2 text-white animate-main-enter">
+        <div className="text-sm select-none glitch font-dotgothic" title="the shape of love">
+          the shape of love
         </div>
-        <div
-          className="glitch font-dotgothic text-4xl select-none"
-          title="愛の形"
-        >
+        <div className="text-4xl select-none glitch font-dotgothic" title="愛の形">
           愛の形
         </div>
       </div>
