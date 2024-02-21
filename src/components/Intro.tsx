@@ -39,13 +39,29 @@ const Intro = ({ show, onClose }: Props) => {
       onTransitionEnd={onClose}
     >
       {/* Typewriter */}
-      <Typewriter onFinish={() => setJapaneseDone(true)} hideCaret={japaneseDone}>
-        {TYPEWRITER_TEXT[page].ja}
-      </Typewriter>
-      {japaneseDone && (
-        <Typewriter delay={1000} onFinish={() => setReadyForNext(true)}>
-          {TYPEWRITER_TEXT[page].en}
-        </Typewriter>
+      {page === 0 && (
+        <>
+          <Typewriter onFinish={() => setJapaneseDone(true)} hideCaret={japaneseDone}>
+            {TYPEWRITER_TEXT[0].ja}
+          </Typewriter>
+          {japaneseDone && (
+            <Typewriter delay={1000} onFinish={() => setReadyForNext(true)}>
+              {TYPEWRITER_TEXT[0].en}
+            </Typewriter>
+          )}
+        </>
+      )}
+      {page === 1 && (
+        <>
+          <Typewriter onFinish={() => setJapaneseDone(true)} hideCaret={japaneseDone}>
+            {TYPEWRITER_TEXT[1].ja}
+          </Typewriter>
+          {japaneseDone && (
+            <Typewriter delay={1000} onFinish={() => setReadyForNext(true)}>
+              {TYPEWRITER_TEXT[1].en}
+            </Typewriter>
+          )}
+        </>
       )}
 
       {/* Next Button */}

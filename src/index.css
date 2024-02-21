@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
 .glitch {
   animation: glitch 1s linear infinite;
 }
