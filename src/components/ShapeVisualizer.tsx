@@ -65,15 +65,13 @@ const ShapeVisualizer = () => {
         onClick={handleClickShape}
         className={`${isAnimating ? "cursor-default pointer-events-none" : "cursor-pointer pointer-events-auto"}`}
       >
-        <g filter="url(#inner_shadow)">
-          <g filter="url(#shadows)">
-            <animated.path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d={to(pathProps.t, interpolator)}
-              fill="url(#radial_gradient)"
-            />
-          </g>
+        <g filter="url(#shadows)">
+          <animated.path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d={to(pathProps.t, interpolator)}
+            fill="url(#radial_gradient)"
+          />
         </g>
         <defs>
           {/* Radial Gradient */}
