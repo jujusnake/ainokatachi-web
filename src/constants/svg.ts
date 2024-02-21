@@ -43,31 +43,31 @@ export const COLOR_ARRAYS: { [color in ColorTypes]: string[] } = {
   ],
   yellow: [
     "#FFFEF1",
-    "#CBBC43",
+    "#e7db7c",
     "0 0 0 0 0.934098 0 0 0 0 0.857193 0 0 0 0 0.229131 0 0 0 0.5 0",
     "0 0 0 0 0.862745 0 0 0 0 0.768627 0 0 0 0 0 0 0 0 1 0",
   ],
   green: [
     "#C9EDC9",
-    "#15CE12",
+    "#8ae688",
     "0 0 0 0 0.146917 0 0 0 0 0.602083 0 0 0 0 0.139536 0 0 0 0.5 0",
     "0 0 0 0 0.0823529 0 0 0 0 0.807843 0 0 0 0 0.0705882 0 0 0 1 0",
   ],
   blue: [
-    "#B7D7FC",
-    "#0D08AE",
+    "#deedff",
+    "#7186cf",
     "0 0 0 0 0.169391 0 0 0 0 0.283861 0 0 0 0 0.884831 0 0 0 0.5 0",
     "0 0 0 0 0.0392157 0 0 0 0 0.0313726 0 0 0 0 0.34902 0 0 0 1 0",
   ],
   orange: [
-    "#E6C9B4",
-    "#FC6A00",
+    "#f4dbc9",
+    "#f0985a",
     "0 0 0 0 0.614502 0 0 0 0 0.258481 0 0 0 0 0 0 0 0 0.5 0",
     "0 0 0 0 0.988235 0 0 0 0 0.415686 0 0 0 0 0 0 0 0 1 0",
   ],
   purple: [
     "#E7DDF8",
-    "#6416E1",
+    "#a77ced",
     "0 0 0 0 0.673387 0 0 0 0 0.46958 0 0 0 0 1 0 0 0 0.5 0",
     "0 0 0 0 0.392157 0 0 0 0 0.0862745 0 0 0 0 0.882353 0 0 0 1 0",
   ],
@@ -79,28 +79,29 @@ export const COLOR_ARRAYS: { [color in ColorTypes]: string[] } = {
   ],
   lime: [
     "#F0FFDD",
-    "#BBF472",
+    "#c6f48b",
     "0 0 0 0 0.768269 0 0 0 0 0.948551 0 0 0 0 0.537389 0 0 0 0.5 0",
     "0 0 0 0 0.364958 0 0 0 0 0.624447 0 0 0 0 0.0362736 0 0 0 1 0",
   ],
   brown: [
     "#FDEFD9",
-    "#88642D",
+    "#b78f55",
     "0 0 0 0 0.929785 0 0 0 0 0.720428 0 0 0 0 0.400576 0 0 0 0.5 0",
     "0 0 0 0 0.315365 0 0 0 0 0.231054 0 0 0 0 0.102247 0 0 0 1 0",
   ],
 };
 
-export const SHAPE_COLOR_MAP: { [shape in ShapeTypes]: ColorTypes | "random" } = {
-  blob1: "pink",
-  blob2: "mint",
-  heart: "red",
-  house: "yellow",
-  flower: "green",
-  moon: "blue",
-  knife: "orange",
-  cookie: "purple",
-  cat: "creme",
-  lamp: "lime",
-  monkey: "brown",
-};
+export const SHAPE_COLOR_MAP: { [shape in ShapeTypes]: ColorTypes | "random" } =
+  {
+    blob1: "pink",
+    blob2: "mint",
+    heart: "red",
+    house: "yellow",
+    flower: "green",
+    moon: "blue",
+    knife: "orange",
+    cookie: "purple",
+    cat: "creme",
+    lamp: "lime",
+    monkey: "brown",
+  };
