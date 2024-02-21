@@ -29,7 +29,7 @@ const Cover = ({ show, onClose }: Props) => {
       </div>
 
       <button
-        className="border text-neutral-300 border-neutral-300 px-4 pt-1 pb-1.5 text-xs font-dotgothic hover:border-neutral-100 hover:text-neutral-100 opacity-0 animate-[main-enter_1.5s_steps(4,_end)_1s_forwards]"
+        className="border text-neutral-300 border-neutral-300 px-4 pt-1 pb-1.5 text-xs font-dotgothic hover:border-neutral-100 hover:text-neutral-100 opacity-0 animate-[fade-in_1.5s_steps(4,_end)_1s_forwards]"
         onClick={onEnter}
       >
         Enter

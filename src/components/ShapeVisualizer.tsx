@@ -8,7 +8,7 @@ const ShapeVisualizer = () => {
   // states
   const [shape, setShape] = useState<ShapeTypes>("blob1");
   const prevPath = useRef<ShapeTypes>("blob1");
-  const [color, setColor] = useState<ColorTypes>(getRandomColor());
+  const [color, setColor] = useState<ColorTypes>("pink");
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   // event handlers + functions
