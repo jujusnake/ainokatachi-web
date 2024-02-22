@@ -10,6 +10,7 @@ export const Shapes = [
   "cat",
   "lamp",
   "monkey",
+  "drop",
 ] as const;
 export type ShapeTypes = (typeof Shapes)[number];
 
@@ -25,5 +26,6 @@ export const Colors = [
   "creme",
   "lime",
   "brown",
+  "water",
 ] as const;
 export type ColorTypes = (typeof Colors)[number];
