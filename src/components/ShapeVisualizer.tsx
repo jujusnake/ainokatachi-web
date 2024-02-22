@@ -3,6 +3,7 @@ import { useCallback, useMemo, useRef, useState } from "react";
 import { interpolate } from "flubber2"; // ES6
 import { COLOR_ARRAYS, ColorTypes, Colors, PATHS, SHAPE_COLOR_MAP, ShapeTypes, Shapes } from "../constants";
 const AnimFeColorMatrix = animated("feColorMatrix");
+import ArrowSVG from "../assets/arrow.svg";
 
 const ShapeVisualizer = () => {
   // states
@@ -55,71 +56,81 @@ const ShapeVisualizer = () => {
   );
 
   return (
-    <div className="text-white">
-      <svg
-        width="500"
-        height="500"
-        viewBox="0 0 500 500"
-        data-current-shape={shape}
-        xmlns="http://www.w3.org/2000/svg"
-        onClick={handleClickShape}
-        className={`${isAnimating ? "cursor-default pointer-events-none" : "cursor-pointer pointer-events-auto"}`}
-      >
-        <g filter="url(#shadows)">
-          <animated.path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d={to(pathProps.t, interpolator)}
-            fill="url(#radial_gradient)"
-          />
-        </g>
-        <defs>
-          {/* Radial Gradient */}
-          <animated.radialGradient id="radial_gradient">
-            <animated.stop offset="0" stopColor={animatedProps.stopColor1} />
-            <animated.stop offset="1" stopColor={animatedProps.stopColor2} />
-          </animated.radialGradient>
-
-          <filter
-            id="shadows"
-            x="0"
-            y="0"
-            width="600"
-            height="600"
-            filterUnits="userSpaceOnUse"
-            colorInterpolationFilters="sRGB"
-          >
-            <feFlood floodOpacity="0" result="BackgroundImageFix" />
-            {/* Drop Shadow */}
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
+    <>
+      <div className="text-white">
+        <svg
+          width="500"
+          height="500"
+          viewBox="0 0 500 500"
+          data-current-shape={shape}
+          xmlns="http://www.w3.org/2000/svg"
+          onClick={handleClickShape}
+          className={`${isAnimating ? "cursor-default pointer-events-none" : "cursor-pointer pointer-events-auto"}`}
+        >
+          <g filter="url(#shadows)">
+            <animated.path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d={to(pathProps.t, interpolator)}
+              fill="url(#radial_gradient)"
             />
-            <feOffset />
-            <feGaussianBlur stdDeviation="50" />
-            <feComposite in2="hardAlpha" operator="out" />
-            <AnimFeColorMatrix type="matrix" values={animatedProps.dropShadowColor} />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_184" />
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_184" result="shape" />
+          </g>
+          <defs>
+            {/* Radial Gradient */}
+            <animated.radialGradient id="radial_gradient">
+              <animated.stop offset="0" stopColor={animatedProps.stopColor1} />
+              <animated.stop offset="1" stopColor={animatedProps.stopColor2} />
+            </animated.radialGradient>
 
-            {/* Inner Shadow */}
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
-            />
-            <feOffset />
-            <feGaussianBlur stdDeviation="12" />
-            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
-            <AnimFeColorMatrix type="matrix" values={animatedProps.innerShadowColor} />
-            <feBlend mode="normal" in2="shape" result="effect2_innerShadow_21_5" />
-          </filter>
-        </defs>
-      </svg>
-    </div>
+            <filter
+              id="shadows"
+              x="0"
+              y="0"
+              width="600"
+              height="600"
+              filterUnits="userSpaceOnUse"
+              colorInterpolationFilters="sRGB"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              {/* Drop Shadow */}
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset />
+              <feGaussianBlur stdDeviation="50" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <AnimFeColorMatrix type="matrix" values={animatedProps.dropShadowColor} />
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_184" />
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_184" result="shape" />
+
+              {/* Inner Shadow */}
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset />
+              <feGaussianBlur stdDeviation="12" />
+              <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+              <AnimFeColorMatrix type="matrix" values={animatedProps.innerShadowColor} />
+              <feBlend mode="normal" in2="shape" result="effect2_innerShadow_21_5" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+
+      {/* Click floater */}
+      {isAnimating === false && (
+        <div className="fixed top-[calc((100vh_-_500px)_/_2)] left-1/2 -translate-x-1/2 text-neutral-300 font-dotgothic flex flex-col items-center gap-2 animate-pulse">
+          <div className="text-xl">click!</div>
+          <img src={ArrowSVG} className="mr-2 rotate-90" />
+        </div>
+      )}
+    </>
   );
 };
 
