@@ -24,13 +24,9 @@ function App() {
   }
 
   return (
-    <>
-      <div className="flex items-center justify-center w-full h-dvh opacity-0 animate-[fade-in_1.5s_ease-in_0.3s_forwards]">
-        <div className="animate-float">
-          <ShapeVisualizer />
-        </div>
-      </div>
-    </>
+    <div className="flex items-center justify-center w-full h-dvh opacity-0 animate-[fade-in_1.5s_ease-in_0.3s_forwards]">
+      <ShapeVisualizer />
+    </div>
   );
 }
 
