@@ -50,9 +50,8 @@ This project has started from [Ariana Grande - positions (Official Live Performa
 ![Ariana Performing][ari-screenshot]
 
 From the lyrics, I got the idea of "versatile and diverse sides of love".  
- _(although at first I only thought this song was all about sexual implications)_
 
-\+ from the video, I got the neon-like color motifs from the stage lightings.
+\+ from the video, I got the neon-like color motifs of the stage lightings.
 
 ### Additional Inspiration
 
@@ -76,7 +75,7 @@ It was a fun time developing because it's my first time doing something complex 
 
 ## Message
 
-I am the biggest advocate of love. But love does have a lot of different sides. It can be happiness, sadness, anger or something more. So with this project I wanted to create an short experience for users to think about how many shapes love may have. Also I intended the UI to be neutral, dark, and pixelated for more private and isolated mood.
+I consider myself as the advocate of love. But love does have a lot of different sides. It can be happiness, sadness, anger or something more. So with this project I wanted to create an short experience for users to think about how many shapes love may have. Also I intended the UI to be neutral, dark, and pixelated for more private and isolated mood.
 
 I wish users would feel like they got a weird invitation and go into a secret web space to think about the two questions I ask in the intro.
 
